@@ -1,20 +1,15 @@
 language: node_js
 node_js:
 - stable
-- 5.4.1
-- 5.4.0
-- 5.3.0
-- 4.2.6
+- '4.3.0'
 group: edge
 os:
   - linux
-services:
-  - mongodb
 env:
   global:
   - NODE_ENV=dev
 install:
-  - npm install -g istanbul
+  - npm install -g istanbul mocha
   - npm install
 script: mocha
 after_script: echo "Running coverage..." && istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
