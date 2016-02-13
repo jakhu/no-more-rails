@@ -29,6 +29,8 @@
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "chai": "*"
+    "chai": "*",
+    "coveralls": "^2.11.6",
+    "mocha-lcov-reporter": "^1.0.0"
   }
 }
