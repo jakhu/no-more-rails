@@ -1,0 +1,21 @@
+# Tree of server
+root
+|- app
+|  |- routes
+|     |- index.js
+|  |- views
+|     |- index.ejs
+|     |- theme.ejs
+|  |- css
+|     |- index.css
+|     |- theme.css
+|  |- sass
+|     |- index.scss
+|     |- theme.scss
+|  |- js
+|     |- index.js
+|     |- theme.js
+|- db
+|  |- data
+|     |- name-of-app
+|  |- database.yml
