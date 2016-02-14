@@ -11,19 +11,21 @@ const bower = {
   files: ["bower_components"],
   type: "app",
   cmd: "bower",
-  actions: { install: exec('bower install') }
+  actions: { install: function () {
+    app.nmr.exec('bower install')
+  }}
 }
 // port
 // Defaults to 8080
 // Can be string or number
 const port = process.env.PORT || 8080
 // Use on every request
-app.use(body, 1)
+app.use(body)
 // Used when requested
-app.use(passport, 2)
+app.use(passport)
 app.routes('/', index)
 app.db('db', db.init, db.config)
-app.plug(io, app.server)
+app.plugin('io', io)
 
 app.configure(function (set) {
   set.set('view-engine', ejs);
@@ -31,8 +33,10 @@ app.configure(function (set) {
   set.files(path.join(app.pwd, 'bower_components'))
   set.set('port', port)
 })
-app.component('bower', 'bower_components')
-app.component('bower', 'install', 'bower install')
+app.component('bower')
+app.component('bower', 'install', function () {
+  app.nmr.exec('bower install')
+});
 // Or use configure
 app.component(bower)
 // Update bower
