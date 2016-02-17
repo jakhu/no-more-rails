@@ -1,8 +1,9 @@
 var app = require('./lib/nmr.js');
-app.add("bower", "o", function () {
+var path = require('path');
+app.add("bower", "install", function () {
   console.log("component o");
 });
-app.port(8080);
-app.listen(function () {
+app.files(path.join(__dirname, '/lib'))
+app.listen(8080, function () {
   console.log("Listening");
 });
