@@ -5,8 +5,5 @@
 */
 
 var nmr = require('./lib/nmr.js');
-nmr.listen(8080, function (err) {
-
-})
 
 module.export = nmr;
