@@ -6,4 +6,4 @@
 
 var nmr = require('./lib/nmr.js');
 
-module.export = nmr;
+module.export = require('./lib/nmr.js');

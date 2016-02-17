@@ -1,8 +1,8 @@
-var app = require('./app.js');
+var app = require('./lib/nmr.js');
 app.add("bower", "o", function () {
   console.log("component o");
 });
-app.components().bower.o();
-app.listen(8080, function () {
+app.port(8080);
+app.listen(function () {
   console.log("Listening");
 });
