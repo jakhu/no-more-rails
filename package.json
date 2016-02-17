@@ -2,10 +2,10 @@
   "name": "nmr",
   "version": "1.0.0",
   "description": "Rails is too complex, so nmr makes it simpler by using nodejs and a simple app structure.",
-  "main": "app.js",
+  "main": "lib/nmr.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "start": "node test.js"
   },
   "repository": {
     "type": "git",
